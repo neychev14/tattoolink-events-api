@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "functions": {
+    "api/tattooEvents.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/tattooEvents",
+      "dest": "/api/tattooEvents.js"
+    }
+  ]
+}
