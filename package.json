@@ -5,6 +5,7 @@
   "type": "module",
   "dependencies": {
     "node-fetch": "^3.3.2",
-    "geolib": "^3.3.4"
+    "geolib": "^3.3.4",
+    "rss-parser": "^3.12.0"
   }
 }
