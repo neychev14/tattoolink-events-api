@@ -1,14 +1,9 @@
 {
   "version": 2,
-  "functions": {
-    "api/tattooEvents.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
+  "builds": [
+    { "src": "api/tattooEvents.js", "use": "@vercel/node" }
+  ],
   "routes": [
-    {
-      "src": "/api/tattooEvents",
-      "dest": "/api/tattooEvents.js"
-    }
+    { "src": "/(.*)", "dest": "api/tattooEvents.js" }
   ]
 }
