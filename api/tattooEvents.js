@@ -3,11 +3,11 @@ import Parser from "rss-parser";
 export default async function handler(req, res) {
   try {
     const parser = new Parser();
-    const CORS_PROXY = "https://api.allorigins.win/raw?url=";
-    const RSS_URL = "https://www.worldtattooevents.com/feed/";
 
-    // Четем RSS чрез proxy
-    const feed = await parser.parseURL(${CORS_PROXY}${encodeURIComponent(RSS_URL)});
+    // Използваме RSS mirror, който няма CORS защита
+    const RSS_URL = "https://feed.tattoo-conventions.com/feed/";
+
+    const feed = await parser.parseURL(RSS_URL);
 
     // Филтрираме само бъдещи или актуални събития
     const upcomingEvents = feed.items
