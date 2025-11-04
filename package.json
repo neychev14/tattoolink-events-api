@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "rss-parser": "^3.12.0",
     "node-fetch": "^3.3.2",
-    "geolib": "^3.3.4",
-    "rss-parser": "^3.12.0"
+    "https-proxy-agent": "^7.0.2"
   }
 }
