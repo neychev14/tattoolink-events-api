@@ -1,18 +1,13 @@
 import Parser from "rss-parser";
-import fetch from "node-fetch";
-import { HttpsProxyAgent } from "https-proxy-agent";
 
 export default async function handler(req, res) {
   try {
-    const parser = new Parser({
-      customFetch: (url, options) => {
-        // Използваме агент, който заобикаля SSL проверки
-        const agent = new HttpsProxyAgent();
-        return fetch(url, { ...options, agent });
-      }
-    });
+    const parser = new Parser();
 
-    const RSS_URL = "https://www.worldtattooevents.com/feed/";
+    // Използваме публичен proxy, който позволява заявката
+    const RSS_URL =
+      "https://api.allorigins.win/raw?url=https://www.worldtattooevents.com/feed/";
+
     const feed = await parser.parseURL(RSS_URL);
 
     const upcomingEvents = feed.items
